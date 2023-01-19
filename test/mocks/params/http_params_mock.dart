@@ -1,5 +1,5 @@
-import 'package:seller/src/domain/params/http/http_params.dart';
-import 'package:seller/src/domain/params/path/path_params.dart';
+import 'package:seller/src/data/params/http/http_params.dart';
+import 'package:seller/src/data/params/path/path_params.dart';
 
 class HttpParamsMock extends HttpParams {
   HttpParamsMock({

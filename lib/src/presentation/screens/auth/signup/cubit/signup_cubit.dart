@@ -2,14 +2,14 @@ import 'package:bloc/bloc.dart';
 
 import 'package:flutter/foundation.dart';
 
-import 'package:seller/src/domain/params/http/http_params.dart';
-import 'package:seller/src/domain/params/path/path_params.dart';
-import 'package:seller/src/domain/params/auth/sign_up_params.dart';
+import 'package:seller/src/data/params/http/http_params.dart';
+import 'package:seller/src/data/params/path/path_params.dart';
+import 'package:seller/src/data/models/auth/sign_up_params_model.dart';
 
-import 'package:seller/src/domain/entities/auth/sign_up_entity.dart';
-import 'package:seller/src/domain/entities/error/message_entity.dart';
+import 'package:seller/src/data/models/auth/sign_up_model.dart';
+import 'package:seller/src/data/models/error/message_model.dart';
 
-import 'package:seller/src/domain/usecases/auth/sign_up_usecase.dart';
+import 'package:seller/src/data/usecases/auth/sign_up_usecase.dart';
 
 part 'signup_state.dart';
 
@@ -18,7 +18,7 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   SignUpCubit(this._useCase) : super(SignupInitialState());
 
-  Future<void> signUp(SignUpParams params) async {
+  Future<void> signUp(SignUpParamsModel params) async {
     emit(SignUpLoadingState());
 
     final response = await _useCase(params: _buildParams(params));
@@ -29,9 +29,9 @@ class SignUpCubit extends Cubit<SignUpState> {
     );
   }
 
-  HttpParams _buildParams(SignUpParams params) => HttpParams(
+  HttpParams _buildParams(SignUpParamsModel params) => HttpParams(
         url: PathParam.signUp,
-        body: SignUpParams(
+        body: SignUpParamsModel(
           name: params.name,
           email: params.email,
           password: params.password,

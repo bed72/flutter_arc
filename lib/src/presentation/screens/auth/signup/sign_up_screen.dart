@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:seller/src/domain/params/auth/sign_up_params.dart';
+import 'package:seller/src/data/models/auth/sign_up_params_model.dart';
 import 'package:seller/src/presentation/common/extensions/context_extension.dart';
 
 import 'package:seller/src/presentation/screens/auth/signup/cubit/signup_cubit.dart';
@@ -10,9 +10,9 @@ import 'package:seller/src/presentation/screens/auth/signup/cubit/signup_cubit.d
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
-  final params = const SignUpParams(
+  final params = const SignUpParamsModel(
     name: 'Gabriel',
-    email: 'gjramos100@gmail.com',
+    email: 'gjramos011@gmail.com',
     password: 'cicada3301',
   );
 
@@ -37,12 +37,19 @@ class SignUpScreen extends StatelessWidget {
               );
             }
 
+            if (state is SignUpSuccessState) {
+              return Center(
+                child: Text(state.value.refreshToken),
+              );
+            }
+
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   const Text('Sign UP'),
+                  const SizedBox(height: 10),
                   TextButton(
                     onPressed: () {
                       bloc.signUp(params);

@@ -4,7 +4,7 @@ import 'package:get_it/get_it.dart';
 
 import 'package:seller/src/external/adapters/http/http_adapter.dart';
 
-import 'package:seller/src/domain/usecases/auth/sign_up_usecase.dart';
+import 'package:seller/src/data/usecases/auth/sign_up_usecase.dart';
 
 import 'package:seller/src/presentation/screens/auth/signup/cubit/signup_cubit.dart';
 

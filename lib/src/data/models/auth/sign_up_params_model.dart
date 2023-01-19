@@ -1,9 +1,9 @@
-class SignUpParams {
+class SignUpParamsModel {
   final String name;
   final String email;
   final String password;
 
-  const SignUpParams({
+  const SignUpParamsModel({
     required this.name,
     required this.email,
     required this.password,

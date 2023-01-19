@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 
 import 'package:either_dart/either.dart';
 
-import 'package:seller/src/domain/params/http/http_params.dart';
+import 'package:seller/src/data/params/http/http_params.dart';
 
 typedef HttpType = Either<Map<String, dynamic>, Map<String, dynamic>>;
 

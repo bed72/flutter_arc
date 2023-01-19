@@ -1,15 +1,15 @@
-import 'package:seller/src/domain/entities/response_entity.dart';
+import 'package:seller/src/data/models/response_model.dart';
 
-class SignUpEntity extends BaseEntity {
+class SignUpModel extends BaseModel {
   final String accessToken;
   final String refreshToken;
 
-  SignUpEntity({
+  SignUpModel({
     required this.accessToken,
     required this.refreshToken,
   });
 
-  factory SignUpEntity.fromMap(Map<String, dynamic> json) => SignUpEntity(
+  factory SignUpModel.fromMap(Map<String, dynamic> json) => SignUpModel(
         accessToken: json['access_token'] as String,
         refreshToken: json['refresh_token'] as String,
       );

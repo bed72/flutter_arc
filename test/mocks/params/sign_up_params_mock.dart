@@ -1,7 +1,7 @@
-import 'package:seller/src/domain/params/auth/sign_up_params.dart';
+import 'package:seller/src/data/models/auth/sign_up_params_model.dart';
 
-class SignUpParamsMock extends SignUpParams {
-  SignUpParamsMock({
+class SignUpParamsModelMock extends SignUpParamsModel {
+  SignUpParamsModelMock({
     String name = 'Bed',
     String email = 'email@email.com',
     String password = 'use_secure_password',

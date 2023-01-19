@@ -4,8 +4,8 @@ import 'package:bloc_test/bloc_test.dart';
 
 import 'package:flutter_test/flutter_test.dart';
 
+import 'package:seller/src/data/usecases/auth/sign_up_usecase.dart';
 import 'package:seller/src/external/adapters/http/http_adapter.dart';
-import 'package:seller/src/domain/usecases/auth/sign_up_usecase.dart';
 
 import 'package:seller/src/presentation/screens/auth/signup/cubit/signup_cubit.dart';
 
@@ -33,7 +33,7 @@ void main() {
         );
       },
       build: () => SignUpCubit(useCase),
-      act: (SignUpCubit cubit) => cubit.signUp(SignUpParamsMock()),
+      act: (SignUpCubit cubit) => cubit.signUp(SignUpParamsModelMock()),
       expect: () => [
         isA<SignUpLoadingState>(),
         isA<SignUpSuccessState>(),
@@ -49,7 +49,7 @@ void main() {
         );
       },
       build: () => SignUpCubit(useCase),
-      act: (SignUpCubit cubit) => cubit.signUp(SignUpParamsMock()),
+      act: (SignUpCubit cubit) => cubit.signUp(SignUpParamsModelMock()),
       expect: () => [
         isA<SignUpLoadingState>(),
         isA<SignUpErrorState>(),
